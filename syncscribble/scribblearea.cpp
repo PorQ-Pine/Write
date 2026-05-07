@@ -1268,8 +1268,12 @@ void ScribbleArea::doCommand(int itemid)
     setCenterPos(pageDimToDim(Point(currPage->width()/2/preScale, currPage->height()/2/preScale)));
     break;
   case ID_ZOOMWIDTH:
-    setZoom(getViewWidth()/currPage->width()/preScale);
-    setCornerPos(pageDimToDim(Point(0, 0)));
+    if(getZoom() == zoomSteps[DEFAULT_ZOOM_IDX]) {
+      setZoom(getViewWidth()/currPage->width()/preScale - 0.02);
+      setCornerPos(pageDimToDim(Point(0, 0)));
+    } else {
+      resetZoom();
+    }
     break;
   case ID_RESETZOOM:  resetZoom();  break;
   case ID_PREVVIEW:  prevView();  break;

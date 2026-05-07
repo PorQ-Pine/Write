@@ -364,7 +364,7 @@ void ScribbleView::panZoomMove(const InputEvent& event, int prevpoints, int next
   }
 
   const Dim TOUCH_TOLERANCE = 0.5*unitsPerPx;  // 0.5 px
-  if(npoints > 1 && scribbleInput->multiTouchMode == INPUTMODE_ZOOM && prevPointerDist > 0) {
+  /*if(npoints > 1 && scribbleInput->multiTouchMode == INPUTMODE_ZOOM && prevPointerDist > 0) {
     Dim newPointerDist = pointerDist(event.points);
     maxPointerDist = std::max(maxPointerDist, newPointerDist);
     if(newPointerDist < preScale*TOUCH_MIN_POINTER_DIST
@@ -376,7 +376,7 @@ void ScribbleView::panZoomMove(const InputEvent& event, int prevpoints, int next
       zoomBy(newPointerDist / prevPointerDist, com.x, com.y);
       prevPointerDist = newPointerDist;
     }
-  }
+  }*/
   // don't call this fn unless you want to pan!
   Dim dx = com.x - prevPointerCOM.x;
   Dim dy = com.y - prevPointerCOM.y;

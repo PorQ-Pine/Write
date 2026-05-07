@@ -54,6 +54,7 @@ public:
   Action* action_Next_Page;
   Action* actionZoom_In;
   Action* actionZoom_Out;
+  Action* actionZoom_Width;
   Action* actionPan;
   Action* actionNew_Page_Before;
   Action* actionNew_Page_After;

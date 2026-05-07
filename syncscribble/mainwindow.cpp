@@ -513,7 +513,7 @@ ScribbleWidget* MainWindow::createScribbleAreaWidget(Widget* container, Scribble
   areaWidget->zoomLabel->setMargins(0, 4);
 
   Button* zoomBtn = createToolbutton(SvgGui::useFile(":/icons/ic_menu_zoom.svg"));
-  zoomBtn->onClicked = SLOT(doCommand(ID_RESETZOOM));
+  zoomBtn->onClicked = SLOT(doCommand(ID_ZOOMWIDTH));
   // press and drag on zoom label to zoom ... not sure if I'll keep this
   float initX = 0;
   Dim initZoom = 0;
@@ -921,7 +921,7 @@ void MainWindow::setupActions()
   actionZoom_Out = createAction("actionZoom_Out", "Zoom &Out", "", "Ctrl+-", SLOT(doCommand(ID_ZOOMOUT)));
   actionReset_Zoom = createAction("actionReset_Zoom", "&Reset Zoom", "", "Ctrl+0", SLOT(doCommand(ID_RESETZOOM)));
   //actionZoom_All = createAction("actionZoom_All", "Zoom All", "", "", SLOT(doCommand(ID_ZOOMALL)));
-  //actionZoom_Width = createAction("actionZoom_Width", "Zoom Width", "", "", SLOT(doCommand(ID_ZOOMWIDTH)));
+  actionZoom_Width = createAction("actionZoom_Width", "Zoom Width", "", "", SLOT(doCommand(ID_ZOOMWIDTH)));
 
   actionPrevious_View = createAction("actionPrevious_View",
       "&Previous View", ":/icons/ic_menu_back.svg", "Backspace", SLOT(doCommand(ID_PREVVIEW)));
@@ -1256,9 +1256,10 @@ void MainWindow::setupActions()
   viewmenu->addAction(actionPrevious_View);
   viewmenu->addAction(actionNext_View);
   // Doesn't much sense to have these buried in submenu now that we have zoom button on statusbar
-  //viewmenu->addAction(actionZoom_In);
-  //viewmenu->addAction(actionZoom_Out);
-  //viewmenu->addAction(actionReset_Zoom);
+  viewmenu->addAction(actionZoom_In);
+  viewmenu->addAction(actionZoom_Out);
+  viewmenu->addAction(actionZoom_Width);
+  viewmenu->addAction(actionReset_Zoom);
   Button* splitviewbtn = viewmenu->addAction(actionSplitView);
   splitviewbtn->mMenu->setAlign(Menu::HORZ_LEFT);
   viewmenu->addAction(actionShow_Bookmarks);  // in case hidden from toolbar
