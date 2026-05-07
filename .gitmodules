@@ -24,7 +24,7 @@
 	ignore = untracked
 [submodule "usvg"]
 	path = usvg
-	url = https://github.com/styluslabs/usvg.git
+	url = https://github.com/PorQ-Pine/usvg.git
 	ignore = untracked
 [submodule "ugui"]
 	path = ugui
