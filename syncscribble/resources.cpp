@@ -91,7 +91,7 @@ void setupResources()
   FSPath fontpath(Application::appDir);
   FSPath sansPath = fontpath.child("Roboto-Regular.ttf");
   if(!sansPath.exists()) {
-     fontpath = FSPath(Application::appDir, "../../scribbleres/fonts/");
+     fontpath = FSPath("/", "usr/share/fonts/google-roboto");
      sansPath = fontpath.child("Roboto-Regular.ttf");
   }
   FSPath fallbackPath = fontpath.child("DroidSansFallback.ttf");
