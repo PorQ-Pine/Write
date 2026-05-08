@@ -6,3 +6,4 @@ TryExec=Write
 Exec=Write %F
 Terminal=false
 Type=Application
+Icon=write_stylus
