@@ -1,0 +1,8 @@
+[Desktop Entry]
+Version=1.0
+Name=Write
+GenericName=Note-taking app
+TryExec=Write
+Exec=Write %F
+Terminal=false
+Type=Application
